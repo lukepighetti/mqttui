@@ -19,8 +19,6 @@ jobs:
           - stable
         os:
           - ubuntu-20.04
-          - macos-11
-          - windows-2022
         clippyargs:
           - -D clippy::pedantic -D warnings
         features:
@@ -88,26 +86,13 @@ jobs:
         include:
           - triple: x86_64-unknown-linux-gnu
             os: ubuntu-20.04
-            rpm: true
-          - triple: aarch64-unknown-linux-gnu
-            os: ubuntu-20.04
-            rpm: true
-          - triple: armv7-unknown-linux-gnueabihf
-            os: ubuntu-20.04
-            rpm: true
-          - triple: arm-unknown-linux-gnueabihf
-            os: ubuntu-20.04
 
-          - triple: x86_64-apple-darwin
-            os: macos-11
-          - triple: aarch64-apple-darwin
-            os: macos-11
-
-          - triple: x86_64-pc-windows-msvc
-            os: windows-2022
-          # https://github.com/briansmith/ring/issues/1167
-          # - triple: aarch64-pc-windows-msvc
-          #   os: windows-2022
+          - triple: i686-unknown-linux-gnu
+            os: ubuntu-20.04
+          - triple: s390x-unknown-linux-gnu
+            os: ubuntu-20.04
+          - triple: riscv64gc-unknown-linux-gnu
+            os: ubuntu-20.04
     steps:
       - name: Setup Rust
         uses: actions-rs/toolchain@v1
